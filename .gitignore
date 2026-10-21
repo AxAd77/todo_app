@@ -1,0 +1,25 @@
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Virtuelle Umgebungen
+.venv/
+.venv312/
+venv/
+
+# PyCharm
+.idea/
+
+# Lokale Datenbank und Protokolle
+data/*.db
+data/*.csv
+data/*.json
+
+# Umgebungsvariablen und Geheimnisse
+.env
+.env.*
+
+# Betriebssystemdateien
+.DS_Store
+Thumbs.db

@@ -1,0 +1,72 @@
+body {
+    background-color: #f3f3f3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px 0 rgba(31,38,135,0.37);
+    transition: 0.3s;
+}
+
+.app-container:hover {
+    box-shadow: 0 8px 28px 0 rgba(31,38,135,0.58);
+}
+
+.todo-title {
+    color: #007BFF;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.separation-line {
+    border-top: 1px solid #eee;
+}
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section input {
+    border-radius: 20px;
+    border: 1px solid #007BFF;
+    box-shadow: 12px 12px 2px 1px rgba(0, 123, 255, .2);
+}
+
+.form-section button {
+    border-radius: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: 1px solid #007BFF;
+    box-shadow: 12px 12px 2px 1px rgba(0, 123, 255, .2);
+}
+
+.table {
+    text-align: center;
+}
+
+.update-btn, .delete-btn {
+    border-radius: 20px;
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.1);
+}
+
+.update-btn {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.alert {
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}

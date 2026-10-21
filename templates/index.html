@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Flask Todo App</title>
+</head>
+<body>
+
+<div class="container app-container">
+
+    <h3 class="todo-title"><img src="../static/logo.png" width=200 class="logo" alt="logo"></h3>
+    <hr class="separation-line">
+    <form action="/add" method="post" class="form-section">
+        <div class="form-group">
+            <label for="title"><i class="fas fa-tasks"></i> Todo Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter Todo...">
+            <button type="submit" class="btn btn-danger add-btn"><i class="fas fa-plus"></i> Add</button>
+        </div>
+    </form>
+    {% if todo_list == [] %}
+        <div class="alert alert-warning" role="alert">
+            <i class="fas fa-exclamation-circle"></i> No Todo available
+        </div>
+    {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Status</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            {% for todo in todo_list %}
+                <tr>
+                    <th scope="row">{{ todo.id }}</th>
+                    <td>{{ todo.title }}</td>
+                    {% if todo.complete == False %}
+                        <td><span class="badge badge-danger"><i class="fas fa-times"></i> Not Complete</span></td>
+                    {% else %}
+                        <td><span class="badge badge-success"><i class="fas fa-check"></i> Completed</span></td>
+                    {% endif %}
+                    <td><a href="/complete/{{ todo.id }}" class="btn btn-info update-btn"><i class="fas fa-pencil-alt"></i> Update</a></td>
+                    <td><a href="/delete/{{ todo.id }}" class="btn btn-danger delete-btn"><i class="fas fa-trash"></i> Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-K
